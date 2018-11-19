@@ -96,6 +96,6 @@ if __name__ == "__main__":
     solution = Solution()
     for i, testcase in enumerate(testcases):
         ans = solution.myAtoi(testcase[0])
-        print(i, 'OK' if ans == testcase[1] else 'Failed', 'str:%s, expected:%s, given:%s'%(testcase[0], testcase[1], ans))
+        print(i, 'OK' if ans == testcase[1] else 'Failed', 'str:%s, expected:%s, return:%s'%(testcase[0], testcase[1], ans))
 
 # Runtime: 36 ms, faster than 93.29% of Python online submissions for String to Integer (atoi).

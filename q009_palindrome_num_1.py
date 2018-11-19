@@ -40,6 +40,6 @@ if __name__ == "__main__":
     solution = Solution()
     for i, testcase in enumerate(testcases):
         ans = solution.isPalindrome(testcase[0])
-        print(i, 'OK' if ans == testcase[1] else 'Failed', 'expected:%s, given:%s'%(testcase[1], ans))
+        print(i, 'OK' if ans == testcase[1] else 'Failed', 'expected:%s, return:%s'%(testcase[1], ans))
 
 ## Runtime: 216 ms, beat 20.61% of python submissions

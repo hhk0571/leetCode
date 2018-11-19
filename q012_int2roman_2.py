@@ -72,6 +72,6 @@ if __name__ == "__main__":
     solution = Solution()
     for i, testcase in enumerate(testcases):
         ans = solution.intToRoman(testcase[1])
-        print(i, 'OK' if ans == testcase[0] else 'Failed', 'expected:%s, given:%s'%(testcase[0], ans))
+        print(i, 'OK' if ans == testcase[0] else 'Failed', 'expected:%s, return:%s'%(testcase[0], ans))
 
 # Runtime: 72 ms, faster than 81.18% of Python online submissions for Integer to Roman.
