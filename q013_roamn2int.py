@@ -37,19 +37,19 @@ class Solution(object):
 
 if __name__ == "__main__":
     testcases=[
-        ('III', 3),
-        ('IV', 4),
-        ('IX', 9),
-        ('XII', 12),
-        ('VIII', 8),
-        ('XXVII', 27),
-        ('LVIII', 58),
+        ('III'    , 3   ),
+        ('IV'     , 4   ),
+        ('IX'     , 9   ),
+        ('XII'    , 12  ),
+        ('VIII'   , 8   ),
+        ('XXVII'  , 27  ),
+        ('LVIII'  , 58  ),
         ('MCMXCIV', 1994),
     ]
 
     solution = Solution()
-    for i, testcase in enumerate(testcases):
-        ans = solution.romanToInt(testcase[0])
-        print(i, 'OK' if ans == testcase[1] else 'Failed', 'expected:%s, return:%s'%(testcase[1], ans))
+    for i, tc in enumerate(testcases):
+        ans = solution.romanToInt(tc[0])
+        print(i, 'OK' if ans == tc[1] else 'Failed', 'expected:%s, return:%s'%(tc[1], ans))
 
 ## Runtime: 96 ms, beat 47.89% of python submissions

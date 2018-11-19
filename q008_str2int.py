@@ -74,28 +74,28 @@ class Solution(object):
 
 if __name__ == "__main__":
     testcases=[
-        ('1234', 1234),
-        ('+1234', 1234),
-        ('-1234', -1234),
-        ('      1234', 1234),
-        ('      +1234', 1234),
-        ('      -1234', -1234),
-        ('      a1234', 0),
-        ('      1234abc', 1234),
-        ("words and 987", 0),
-        ("-91283472332", -2147483648),
-        ("+91283472332", 2147483647),
-        ("4193 with words", 4193),
-        ("   +0 123", 0),
-        ("0-1", 0),
-        ("    -88827   5655  U", -88827),
-        ("-5-", -5)
+        ('1234'                ,  1234      ),
+        ('+1234'               ,  1234      ),
+        ('-1234'               , -1234      ),
+        ('      1234'          ,  1234      ),
+        ('      +1234'         ,  1234      ),
+        ('      -1234'         , -1234      ),
+        ('      a1234'         ,  0         ),
+        ('      1234abc'       ,  1234      ),
+        ("words and 987"       ,  0         ),
+        ("-91283472332"        , -2147483648),
+        ("+91283472332"        ,  2147483647),
+        ("4193 with words"     ,  4193      ),
+        ("   +0 123"           ,  0         ),
+        ("0-1"                 ,  0         ),
+        ("    -88827   5655  U", -88827     ),
+        ("-5-"                 , -5         )
 
     ]
 
     solution = Solution()
-    for i, testcase in enumerate(testcases):
-        ans = solution.myAtoi(testcase[0])
-        print(i, 'OK' if ans == testcase[1] else 'Failed', 'str:%s, expected:%s, return:%s'%(testcase[0], testcase[1], ans))
+    for i, tc in enumerate(testcases):
+        ans = solution.myAtoi(tc[0])
+        print(i, 'OK' if ans == tc[1] else 'Failed', 'str:%s, expected:%s, return:%s'%(tc[0], tc[1], ans))
 
 # Runtime: 36 ms, faster than 93.29% of Python online submissions for String to Integer (atoi).

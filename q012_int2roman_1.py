@@ -56,24 +56,24 @@ class Solution(object):
 
 if __name__ == "__main__":
     testcases=[
-        ('III', 3),
-        ('IV', 4),
-        ('IX', 9),
-        ('XII', 12),
-        ('VIII', 8),
-        ('XXVII', 27),
-        ('LVIII', 58),
-        ('CII', 102),
-        ('CXCIX', 199),
-        ('MCMXCIV', 1994),
+        ('III'         , 3   ),
+        ('IV'          , 4   ),
+        ('IX'          , 9   ),
+        ('XII'         , 12  ),
+        ('VIII'        , 8   ),
+        ('XXVII'       , 27  ),
+        ('LVIII'       , 58  ),
+        ('CII'         , 102 ),
+        ('CXCIX'       , 199 ),
+        ('MCMXCIV'     , 1994),
         ('MMMCCCXXXIII', 3333),
-        ('MCDXXXVII', 1437),
+        ('MCDXXXVII'   , 1437),
 
     ]
 
     solution = Solution()
-    for i, testcase in enumerate(testcases):
-        ans = solution.intToRoman(testcase[1])
-        print(i, 'OK' if ans == testcase[0] else 'Failed', 'expected:%s, return:%s'%(testcase[0], ans))
+    for i, tc in enumerate(testcases):
+        ans = solution.intToRoman(tc[1])
+        print(i, 'OK' if ans == tc[0] else 'Failed', 'expected:%s, return:%s'%(tc[0], ans))
 
 # Runtime: 84 ms, faster than 49.73% of Python online submissions for Integer to Roman.

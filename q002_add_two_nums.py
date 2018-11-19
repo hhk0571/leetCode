@@ -52,15 +52,15 @@ def listnode2list(lstnode):
 
 if __name__ == "__main__":
     testcases=[
-        ([2, 4, 3], [5,6,4], [7,0,8]),
-        ([0], [0], [0]),
-        ([1, 2, 7], [8,9], [9, 1, 8]),
+        ([2, 4, 3], [5,6,4], [7,0,8  ]),
+        ([0      ], [0    ], [0      ]),
+        ([1, 2, 7], [8,9  ], [9, 1, 8]),
 
     ]
 
     solution = Solution()
-    for i, testcase in enumerate(testcases):
-        ans = solution.addTwoNumbers(list2listnode(testcase[0]), list2listnode(testcase[1]))
-        print(i, 'OK' if listnode2list(ans) == testcase[2] else 'Failed', 'expected:%s, return:%s'%(testcase[2], listnode2list(ans)))
+    for i, tc in enumerate(testcases):
+        ans = solution.addTwoNumbers(list2listnode(tc[0]), list2listnode(tc[1]))
+        print(i, 'OK' if listnode2list(ans) == tc[2] else 'Failed', 'expected:%s, return:%s'%(tc[2], listnode2list(ans)))
 
 # Runtime: 68 ms, faster than 93.39% of Python online submissions.

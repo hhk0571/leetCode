@@ -24,18 +24,18 @@ class Solution(object):
 
 if __name__ == "__main__":
     testcases=[
-        (121, True),
-        (-121, False),
-        (10, False),
-        (9, True),
-        (1000, False),
-        (1234321, True),
-        (12344321, True),
+        ( 121     , True ),
+        (-121     , False),
+        ( 10      , False),
+        ( 9       , True ),
+        ( 1000    , False),
+        ( 1234321 , True ),
+        ( 12344321, True ),
     ]
 
     solution = Solution()
-    for i, testcase in enumerate(testcases):
-        ans = solution.isPalindrome(testcase[0])
-        print(i, 'OK' if ans == testcase[1] else 'Failed', 'expected:%s, return:%s'%(testcase[1], ans))
+    for i, tc in enumerate(testcases):
+        ans = solution.isPalindrome(tc[0])
+        print(i, 'OK' if ans == tc[1] else 'Failed', 'expected:%s, return:%s'%(tc[1], ans))
 
 ## Runtime: 144 ms, beat 89.41% of python submissions
