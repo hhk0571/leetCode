@@ -16,6 +16,7 @@ class Solution(object):
         n = len(s)
         mid = (n)//2
 
+        ## just similar to finding the median
         left_s  = s[:mid]
         if (n - mid) > mid:
             right_s = s[mid+1:]
