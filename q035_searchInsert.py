@@ -15,7 +15,6 @@ class Solution(object):
             return nums.index(target)
         except ValueError:
             # binary search
-            ret = 0
             start, end, mid = 0, nums_len-1, 0
             while start <= end:
                 mid = start + (end - start) // 2
@@ -24,23 +23,29 @@ class Solution(object):
                 elif nums[mid] > target:
                     end = mid -1
                 else:
-                    ret = mid
-                    break
+                    # nums[mid] == target:
+                    # never go here
+                    return mid
             
             if nums[mid] < target:
                 mid += 1
 
-            return mid
+        return mid
 
 
 
 if __name__ == "__main__":
     testcases=[
-        ([[1,3,5,6], 5], 2),
-        ([[1,3,5,6], 2], 1),
-        ([[1,3,5,6], 7], 4),
-        ([[1,3,5,6], 0], 0),
-        ([[1,3,5  ], 4], 2)
+        ([[ 1,  3,5,6   ], 5], 2),
+        ([[ 1,  3,5,6   ], 2], 1),
+        ([[ 1,  3,5,6   ], 7], 4),
+        ([[ 1,  3,5,6   ], 0], 0),
+        ([[ 1,  3,5     ], 4], 2),
+        ([[-4, -2,3,5   ], 0], 2),
+        ([[-4, -2,0,3,5 ], 0], 2),
+        ([[ 0,  0,0     ], 0], 0),
+        ([[ 1,  2,4,6,7 ], 3], 2),
+        ([[ 3,  5,7,9,10], 8], 3),
     ]
 
     solution = Solution()
