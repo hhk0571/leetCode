@@ -30,13 +30,9 @@ class Solution(object):
                     idx_b += 1
                     idx_c -= 1
                 elif two_sum < -a: # means b is too small, try bigger one
-                    expected_b = -(a+c)
-                    while idx_b < idx_c and nums[idx_b] < expected_b:
-                        idx_b += 1
+                    idx_b += 1
                 elif two_sum > -a: # means c is too large, try smaller one
-                    expected_c = -(a+b)
-                    while idx_c > idx_b and nums[idx_c] > expected_c:
-                        idx_c -= 1
+                    idx_c -= 1
 
         # remove duplicated elements
         last_elem = None
@@ -66,4 +62,4 @@ if __name__ == "__main__":
         ans = solution.threeSum(tc[0])
         print(i, 'OK' if ans == tc[1] else 'Failed', 'expected:%s, return:%s'%(tc[1], ans))
 
-# Runtime: 524 ms, faster than 94.56% of Python online submissions for 3Sum.
+# Runtime: 580 ms, faster than 86.73% of Python online submissions for 3Sum.
