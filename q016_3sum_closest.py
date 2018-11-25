@@ -14,7 +14,7 @@ class Solution(object):
 
         # find all [a, b, c]
         last_a = None
-        last_gap = None
+        min_gap = abs(min_sum - target)
         for idx_a in range(nums_len-2):
             a = nums[idx_a]
             if last_a == a: continue
@@ -27,13 +27,12 @@ class Solution(object):
                 c = nums[idx_c]
                 two_sum = b + c
                 gap = abs(two_sum - benchmark)
-                if last_gap is None:
-                    last_gap = gap
+                
                 if gap == 0:
                     return target
-                elif last_gap and gap < last_gap:
-                    min_sum = a + b + c
-                    last_gap = gap
+                elif gap < min_gap:
+                    min_sum = a + two_sum
+                    min_gap = gap
 
                 if two_sum < benchmark: # means b is too small, try bigger one
                     idx_b += 1
