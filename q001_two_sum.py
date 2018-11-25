@@ -9,13 +9,13 @@ class Solution:
         :rtype: List[int]
         """
         d={}
-        for index_a, a in enumerate(nums):
-            b = target - a
-            index_b = d.get(b)
-            if index_b is not None:
-                return [index_b, index_a]
+        for i, n in enumerate(nums):
+            a = target - n
+            index_a = d.get(a)
+            if index_a is not None:
+                return [index_a, i]
             else:
-                d[a]=index_a
+                d[n]=i
 
 
 if __name__ == "__main__":
