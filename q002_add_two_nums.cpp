@@ -1,4 +1,4 @@
-#include <vector>
+ #include <vector>
 #include <iostream>
 #include <string>
 #include <tuple>
@@ -12,37 +12,36 @@ struct ListNode {
     int val;
     ListNode *next;
     ListNode(int x=0, ListNode *next=nullptr) : val(x), next(next) {}
-};
-
-ListNode* fromVector(const vector<int>& v){
-    auto head = new ListNode();
-    auto node = head;
-    for (const auto&i : v)
+    ListNode(const vector<int>& v): ListNode()
     {
-        node->next = new ListNode(i);
-        node = node->next;
+        auto p = this;
+        for (const auto&i : v)
+        {
+            p->next = new ListNode(i);
+            p = p->next;
+        }
     }
-    return head->next;
-}
 
-vector<int> toVector(ListNode* lstNode)
-{
-    vector<int> v;
-    while (lstNode) {
-        v.push_back(lstNode->val);
-        lstNode = lstNode->next;
+    vector<int> toVector() const
+    {
+        vector<int> v;
+        auto p = this;
+        while (p) {
+            v.emplace_back(p->val);
+            p = p->next;
+        }
+        return v;
     }
-    return v;
-}
 
+};
 
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        auto l3 = new ListNode();
+        ListNode ret;
         auto a = l1;
         auto b = l2;
-        auto c = l3;
+        auto c = &ret;
         int carry = 0;
 
         while (a or b)
@@ -65,7 +64,7 @@ public:
             c->next = new ListNode(carry);
         }
 
-        return l3->next;
+        return ret.next;
     }
 };
 
@@ -87,10 +86,10 @@ int main(int argc, char const *argv[])
     auto s = Solution();
     for (auto& testcase:testCases){
         auto idx = &testcase - testCases.data();
-        auto l1 = fromVector(std::get<0>(testcase));
-        auto l2 = fromVector(std::get<1>(testcase));
-        auto l3 = s.addTwoNumbers(l1, l2);
-        auto ret = toVector(l3);
+        ListNode l1(std::get<0>(testcase));
+        ListNode l2(std::get<1>(testcase));
+        auto l3_p = s.addTwoNumbers(l1.next, l2.next);
+        auto ret = l3_p->toVector();
         cout << "case " << idx << ": " <<(ret == std::get<2>(testcase) ? "PASSED" : "FAILED") << endl;
         print_all(std::get<2>(testcase), "    expected: ");
         print_all(ret, "    returned: ");
